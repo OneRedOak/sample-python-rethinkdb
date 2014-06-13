@@ -1,4 +1,4 @@
-Python MongoDB Sample [![Build Status](https://apibeta.shippable.com/projects/537a506f326b4d0f004a46bb/badge/master)](https://shippable.com)
+Python RethinkDB Sample [![Build Status](https://apibeta.shippable.com/projects/539a1d6d0a4350740023dede/badge/master)](https://beta.shippable.com/projects/539a1d6d0a4350740023dede)
 =====================
 
-Uses pymongo to test simple document insertion on a MongoDB instance.
+Tests simple document insertion on a RethinkDB instance.

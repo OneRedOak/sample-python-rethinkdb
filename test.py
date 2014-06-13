@@ -1,13 +1,13 @@
 import unittest
-from mongo import Mongo
+from rethink import Rethink
 
 
 class TestSuite(unittest.TestCase):
 
     def test(self):
-        mongo = Mongo()
-        mongo.populate()
-        things = mongo.count()
+        rethink = Rethink()
+        rethink.populate()
+        things = rethink.count()
         self.failIf(things != 5)
 
 
