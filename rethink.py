@@ -6,9 +6,10 @@ class Rethink():
         self.client = r.connect(host = 'localhost', port = 28015).repl()
         r.db_drop('test').run()
         r.db_create('test').run()
+        self.db = r.db('test')
 
     def populate(self):
-        r.db('test').table_create('table').run()        
+        self.db.table_create('table').run()        
         things = [
             {"name": "Vishnu"},
             {"name": "Lakshmi"},
@@ -16,11 +17,10 @@ class Rethink():
             {"name": "Krishna"},
             {"name": "Murugan"}
         ]
-        r.table('table').insert(things).run()
+        self.db.table('table').insert(things).run()
 
     def count(self):
-        print("Table Count: " + r.table('table').get_all('name').run().count())
-        return r.table('table').get_all('name').run().count()
+        return self.db.table('table').count().run()
 
 if __name__ == "__main__":
     rethink = Rethink()
